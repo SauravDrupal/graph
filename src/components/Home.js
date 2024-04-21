@@ -5,7 +5,7 @@ import BarChart from "./BarChart";
 import LineChart from "./LineChart";
 import RadarChart from "./RadarChart";
 import DoughnutChart from "./DoughnutChart";
-import PieChart from "./pieChart";
+import PieChart from "./PieChart";
 
 
 const HomePage = () => {
