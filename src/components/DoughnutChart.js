@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 
-const MyChartComponent = () => {
+const DoughnutChart = () => {
     const chartRef = useRef(null); // Ref to hold the chart instance
 
     useEffect(() => {
@@ -11,21 +11,15 @@ const MyChartComponent = () => {
             chartRef.current.destroy();
         }
 
-        const ctx = document.getElementById('myChart').getContext('2d');
+        const ctx = document.getElementById('myChartDoughnut').getContext('2d');
         const newChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'doughnut',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', 'Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                 datasets: [{
-                    label: '# of Votes',
-                    data: [2, 5, 3, 5, 2, 3, 2, 5, 3, 5, 2, 3],
+                    label: 'My Doughnut Chart',
+                    data: [12, 19, 3, 5, 2, 3],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)',
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
                         'rgba(255, 206, 86, 0.2)',
@@ -39,12 +33,6 @@ const MyChartComponent = () => {
                         'rgba(255, 206, 86, 1)',
                         'rgba(75, 192, 192, 1)',
                         'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
                         'rgba(255, 159, 64, 1)'
                     ],
                     borderWidth: 1
@@ -52,21 +40,13 @@ const MyChartComponent = () => {
             },
             options: {
                 responsive: true,
-                scales: {
-                    x: {
-                        type: "category"
-                    },
-                    y: {
-                        beginAtZero: true
-                    }
-                },
                 plugins: {
                     legend: {
                         position: 'top',
                     },
                     title: {
                         display: true,
-                        text: 'My Bar Chart'
+                        text: 'My Doughnut Chart'
                     }
                 }
             }
@@ -83,12 +63,14 @@ const MyChartComponent = () => {
         };
     }, []);
 
-    return <canvas
-        id="myChart"
-        style={{position: "realtive", maxWidth: "90vw", maxHeight: "80vh" }} // Set inline styles for width and height
-        width="400"
-        height="300"
-    ></canvas>;
+    return (
+        <canvas
+            id="myChartDoughnut"
+            style={{ maxWidth: '400px', maxHeight: '300px' }} // Set inline styles for max-width and max-height
+            width="400"
+            height="300"
+        ></canvas>
+    );
 };
 
-export default MyChartComponent;
+export default DoughnutChart;

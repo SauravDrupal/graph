@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 
-const MyChartComponent = () => {
+const LineChart = () => {
     const chartRef = useRef(null); // Ref to hold the chart instance
 
     useEffect(() => {
@@ -11,9 +11,9 @@ const MyChartComponent = () => {
             chartRef.current.destroy();
         }
 
-        const ctx = document.getElementById('myChart').getContext('2d');
+        const ctx = document.getElementById('myChartLine').getContext('2d');
         const newChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', 'Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                 datasets: [{
@@ -66,7 +66,7 @@ const MyChartComponent = () => {
                     },
                     title: {
                         display: true,
-                        text: 'My Bar Chart'
+                        text: 'My Line Chart'
                     }
                 }
             }
@@ -84,11 +84,11 @@ const MyChartComponent = () => {
     }, []);
 
     return <canvas
-        id="myChart"
+        id="myChartLine"
         style={{position: "realtive", maxWidth: "90vw", maxHeight: "80vh" }} // Set inline styles for width and height
         width="400"
         height="300"
     ></canvas>;
 };
 
-export default MyChartComponent;
+export default LineChart;
