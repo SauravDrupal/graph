@@ -29,6 +29,9 @@ const HomePage = () => {
             {chartName == "doughnut" && <DoughnutChart /> }
 
             {chartName == "radar" && <RadarChart /> }
+
+
+            <h1>Just for testing</h1>
         </div>
     );
 }
