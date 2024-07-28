@@ -4,10 +4,10 @@ import Chart from 'chart.js/auto';
 
 const MyChartComponent = () => {
     const chartRef = useRef(null); // Ref to hold the chart instance
-
+    const totalVotes = [20, 50, 30, 50, 20, 30, 20, 50, 30, 50, 20, 30]
     useEffect(() => {
         if (chartRef.current) {
-            // If chart already exists, destroy it
+            // If chart already exists0, destroy it
             chartRef.current.destroy();
         }
 
@@ -18,7 +18,7 @@ const MyChartComponent = () => {
                 labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', 'Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                 datasets: [{
                     label: '# of Votes',
-                    data: [2, 5, 3, 5, 2, 3, 2, 5, 3, 5, 2, 3],
+                    data: totalVotes,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
