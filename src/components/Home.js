@@ -15,6 +15,7 @@ const HomePage = () => {
         <>
             <ul>
                 <li className="w-[250px] h-[50px] border-2 border-black rounded-[6px] text-center pt-[10px] hover:bg-[#f0f0f0]"><Link href="/stopwatch">Redirect To Stopwatch</Link></li>
+                <li className="w-[250px] h-[50px] border-2 border-black rounded-[6px] text-center pt-[10px] hover:bg-[#f0f0f0]"><Link href="/search">Redirect To Search</Link></li>
             </ul>
             <div className="flex min-h-screen flex-col items-center justify-between p-24">
                 <h1>Next.js Graphs</h1>
